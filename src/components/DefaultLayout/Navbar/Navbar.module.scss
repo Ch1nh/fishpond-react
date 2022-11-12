@@ -1,0 +1,121 @@
+.navbar {
+  border-bottom: 0;
+  box-shadow: 0 0 2rem #3540521a;
+  background-color: #fff !important;
+  width: 1110px;
+  height: 68px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 14px 20px 14px 8px;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+.navbar-toggler {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  color: #495057;
+  margin-right: 8px;
+  &:hover {
+    color: #2f878c;
+    text-decoration: underline;
+  }
+}
+.icon-toggler {
+  font-size: 25px;
+}
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: auto;
+  flex-grow: 1;
+  align-items: center;
+  height: 100%;
+}
+.navbar-nav {
+  display: flex;
+
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navbar-item {
+  position: relative;
+  height: 45px;
+  width: 40px;
+  align-items: center;
+}
+.alert {
+  font-size: 20px;
+}
+.flag {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.avatar {
+  margin-top: -15px;
+  margin-bottom: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  margin-right: 0.25rem !important;
+}
+.drop-togger {
+  width: 134px;
+  height: 40px;
+  &:after {
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: '';
+    border: solid;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+  }
+}
+.text-dark {
+  font-size: 16px;
+  color: #354052;
+  font-weight: 400;
+}
+.alert-btn {
+  &:hover {
+    color: #47bac1;
+  }
+}
+.btn-small {
+  width: 45px;
+  height: 36px;
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.btn-1 {
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  padding: 0.35rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #495057;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  &:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+}
+.icon {
+  margin-right: 10px;
+}

@@ -1,0 +1,115 @@
+.sidebar {
+  min-width: 256px;
+  max-width: 256px;
+  border-right: 0;
+  height: 1200px;
+  background-color: #354052;
+  position: relative;
+}
+.sidebar-nav {
+  padding-left: 0px;
+}
+.sidebar-brand {
+  font-weight: 400;
+  font-size: 1.15rem;
+  padding: 1.15rem 1.5rem;
+  color: #f8f9fa;
+  display: block;
+}
+.sidebar-content {
+  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out;
+  background: #354052;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #ced4da;
+  font-weight: 400;
+  background: #354052;
+  transition: 0.1s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  &:before {
+    content: ' ';
+    border: solid;
+    border-width: 0 0.1rem 0.1rem 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    transition: all 0.2s ease-out;
+  }
+}
+
+.sidebar-dropdown {
+  padding: 0.625rem 1.5rem 0.625rem 2.75rem;
+  color: #adb5bd;
+  background: #313b4c;
+  font-weight: 400;
+}
+.feather {
+  width: 18px;
+  height: 18px;
+}
+.align-middle {
+  vertical-align: middle !important;
+}
+.sidebar-link {
+  color: #ced4da;
+  background: #2d3646;
+}
+.sidebar-badge {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 6px;
+  background-color: #47bac1;
+}
+
+.feather {
+  width: 25px;
+  height: 25px;
+}
+.sidebar-bottom {
+  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out;
+  padding: 1rem;
+  width: inherit;
+  font-size: 0.8rem;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background: #313b4c;
+  min-width: 256px;
+  max-width: 256px;
+  color: #e9ecef;
+  border-right: 0;
+  margin-left: 0;
+}
+.fas {
+  font-weight: 900;
+  font-family: Font Awesome\5 Free;
+}
+
+.avatar {
+  margin-top: -15px;
+  margin-bottom: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  margin-right: 16px;
+}
+.media {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.media-body {
+  flex: 1;
+}
