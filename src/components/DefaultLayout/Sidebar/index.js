@@ -2,7 +2,9 @@ import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 import avatar from '~/assets/images/admin.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
+
 function Sidebar() {
   const [newData, setNewData] = useState(false);
 
@@ -54,10 +56,10 @@ function Sidebar() {
             {newData && (
               <ul className={cx('sidebar-dropdown')}>
                 <li className={cx('sidebar-item')}>
-                  <a className={cx('sidebar-link')} href="#dashboards">
+                  <Link className={cx('sidebar-link')} to="/table">
                     Dữ liệu mới
                     <span className={cx('sidebar-badge')}>New</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}

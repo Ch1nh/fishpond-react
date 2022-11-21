@@ -2,7 +2,6 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';
-import Table from '../Table';
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
   return (
@@ -10,9 +9,7 @@ function DefaultLayout({ children }) {
       <Sidebar />
       <div className={cx('main')}>
         <Navbar />
-        <div className={cx('content')}>
-          <Table />
-        </div>
+        <div className={cx('content')}>{children}</div>
       </div>
     </div>
   );

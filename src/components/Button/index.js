@@ -8,10 +8,9 @@ function Button({
   to,
   href,
   className,
-  success,
-  danger,
+
   small = false,
-  warning,
+
   rightIcon,
   leftIcon,
   ...passprops
@@ -33,9 +32,6 @@ function Button({
 
   const classes = cx('wrapper', {
     [className]: className,
-    success,
-    danger,
-    warning,
     small,
   });
   return (

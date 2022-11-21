@@ -23,9 +23,7 @@ const cx = classNames.bind(styles);
 function Navbar() {
   const [hideFlaf, setHideFlag] = useState(false);
 
-  const handleTippy = () => {
-    setHideFlag(false);
-  };
+  const handleTippy = () => setHideFlag(false);
 
   return (
     <div className={cx('navbar')}>
