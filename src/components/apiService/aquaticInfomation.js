@@ -28,3 +28,12 @@ export const getAllOfDeviceLastUpdate = async (page, sort, sortType, search = ''
     console.log(err);
   }
 };
+export const getAllByDevice = async (id) => {
+  try {
+    const res = await request.get(`aquatic-information/device/${id}`);
+
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -14,7 +14,7 @@ export const initState = {
   sort: sortFishPondName,
   sortType: sortTypeASC,
   search: '',
-  totalPage: 5,
+  totalPage: 2,
 };
 export const SET_PREVPAGE = 'set_prevpage';
 export const SET_NEXTPAGE = 'set_nextpage';
@@ -26,8 +26,15 @@ export const SET_SORTHUMIDITY = 'set_sortHumidity';
 export const SET_SORTTEMPERATURE = 'set_temperature';
 export const SET_SORTPH = 'set_sortPH';
 export const SET_SORTEVALUATION = 'set_sortEvaluation';
+export const SET_TOTALPAGE = 'set_totalpage';
 
 export const SET_SEARCH = 'set_search';
+export const setTotalPage = (payload) => {
+  return {
+    type: SET_TOTALPAGE,
+    payload,
+  };
+};
 
 export const setSearch = (payload) => {
   return {
@@ -36,8 +43,9 @@ export const setSearch = (payload) => {
   };
 };
 export const reducer = (state, action) => {
-  console.log(action);
   switch (action.type || action) {
+    case SET_TOTALPAGE:
+      return { ...state, totalPage: action.payload };
     case SET_PREVPAGE:
       if (state.page === 0) {
         return state;
@@ -45,7 +53,7 @@ export const reducer = (state, action) => {
         return { ...state, page: state.page - 1 };
       }
     case SET_NEXTPAGE:
-      if (state.page === state.totalPage) return state;
+      if (state.page + 1 === state.totalPage) return state;
       else return { ...state, page: state.page + 1 };
 
     case SET_SORTFISHPONDNAME:

@@ -8,12 +8,15 @@ import { faChartLine, faMagnifyingGlass, faForward, faBackward, faSort } from '@
 
 import styles from './Table.module.scss';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Table() {
   const [searchValue, setSearchValue] = useState('');
   const [aquaticList, setAquaticList] = useState([]);
+  const [totalElements, setTotalElements] = useState([]);
+
   const [state, dispatch] = useReducer(table.reducer, table.initState);
 
   useEffect(() => {
@@ -24,10 +27,12 @@ function Table() {
         state.sortType,
         state.search,
       );
+
       setAquaticList(results.content);
+
+      setTotalElements(results.totalElements);
     };
     getAll();
-    console.log(state);
   }, [state]);
 
   const checkColor = (evaluation = '') => {
@@ -120,22 +125,24 @@ function Table() {
                   <td>
                     <Button className={cx(checkColor(aquaticInfo.evaluation))}>{aquaticInfo.evaluation}</Button>
                   </td>
-                  <td>
-                    <button>
+                  <td className={cx('icon-td')}>
+                    <Link to={`/quanly/bieudo/${aquaticInfo.device.id}`}>
                       <FontAwesomeIcon className={cx('material-icons')} icon={faChartLine} />
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <div className="pagination">
-            <div className="hint-text">Hiển thị từ 1- 10 </div>
-            <ul className="pagination">
+          <div className={cx('pagination')}>
+            <div className="hint-text">
+              Hiển thị từ <b></b>1- 10 trong tổng số <b>{totalElements}</b>
+            </div>
+            <ul className={cx('pagination-page')}>
               <button onClick={() => dispatch(table.SET_PREVPAGE)}>
                 <FontAwesomeIcon icon={faBackward} />
               </button>
-              <span>{state.page + 1}</span>
+              <span className={cx('page')}>{state.page + 1}</span>
               <button onClick={() => dispatch(table.SET_NEXTPAGE)}>
                 <FontAwesomeIcon icon={faForward} />
               </button>

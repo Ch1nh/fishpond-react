@@ -1,8 +1,23 @@
 .search-box {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .search-icons {
   align-items: center;
+}
+.material-icons {
+  font-size: 25px;
+}
+.icon-td {
+  justify-content: center;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+.pagination-page {
+  font-size: 20px;
+}
+.page {
+  margin-left: 7px;
+  margin-right: 7px;
 }
