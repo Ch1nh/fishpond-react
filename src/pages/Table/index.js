@@ -46,7 +46,8 @@ function Table() {
 
     return color;
   };
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     dispatch(table.setSearch(searchValue));
   };
   return (
@@ -59,17 +60,17 @@ function Table() {
                 <h2>Thông tin chỉ số đo mới nhất của các thiết bị</h2>
               </div>
               <div className={cx('col-sm-4')}>
-                <div className={cx('search-box')}>
+                <form className={cx('search-box')} onSubmit={handleSearch}>
                   <input
                     type="text"
                     className={cx('form-control')}
                     placeholder="Nhập từ khóa"
                     onChange={(e) => setSearchValue(e.target.value)}
                   />
-                  <button onClick={handleSearch}>
+                  <button>
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('search-icons')} />
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </div>

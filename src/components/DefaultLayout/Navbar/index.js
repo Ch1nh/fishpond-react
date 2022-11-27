@@ -17,6 +17,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 import Button from '~/components/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutSuccess } from '~/redux/authSlice';
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +26,11 @@ function Navbar() {
   const [hideFlaf, setHideFlag] = useState(false);
 
   const handleTippy = () => setHideFlag(false);
+  const user = useSelector((state) => state.auth.login.currentUser);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logoutSuccess());
+  };
 
   return (
     <div className={cx('navbar')}>
@@ -64,7 +71,7 @@ function Navbar() {
                     <FontAwesomeIcon icon={faQuestion} className={cx('icon')} />
                     Trợ giúp
                   </Button>
-                  <Button className={cx('btn-1')} href="#">
+                  <Button className={cx('btn-1')} onClick={handleLogout}>
                     <FontAwesomeIcon icon={faRightFromBracket} className={cx('icon')} />
                     Đăng xuất
                   </Button>
@@ -73,8 +80,8 @@ function Navbar() {
             )}
           >
             <button className={cx('drop-togger')} onClick={() => setHideFlag(!hideFlaf)}>
-              <img src={Avatar} className={cx('avatar')} alt="congle98" />
-              <span className={cx('text-dark')}>congle98</span>
+              <img src={Avatar} className={cx('avatar')} alt="username" />
+              <span className={cx('text-dark')}>{user ? user.user.username : 'userName'}</span>
             </button>
           </Tippy>
         </div>

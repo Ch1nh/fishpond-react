@@ -1,5 +1,5 @@
-function Dashboard() {
-  return <h2>dashboard</h2>;
+function Dashboard({ children }) {
+  return <div>{children}</div>;
 }
 
 export default Dashboard;

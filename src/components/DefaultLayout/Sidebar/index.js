@@ -3,15 +3,17 @@ import styles from './Sidebar.module.scss';
 import avatar from '~/assets/images/admin.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const cx = classNames.bind(styles);
 
 function Sidebar() {
   const [newData, setNewData] = useState(false);
+  const user = useSelector((state) => state.auth.login.currentUser);
 
   return (
     <div id="sidebar" className={cx('sidebar')}>
       <div className={cx('sidebar-content')}>
-        <a className={cx('sidebar-brand')} href="index.html">
+        <a className={cx('sidebar-brand')} href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
@@ -70,7 +72,7 @@ function Sidebar() {
         <div className={cx('media')}>
           <img className={cx('avatar')} src={avatar} alt="Chris Wood" width="40" height="40" />
           <div className={cx('media-body')}>
-            <h4 className={cx('mb-1')}>congle98</h4>
+            <h4 className={cx('mb-1')}>{user ? user.user.username : 'userName'}</h4>
             <div>Online</div>
           </div>
         </div>
